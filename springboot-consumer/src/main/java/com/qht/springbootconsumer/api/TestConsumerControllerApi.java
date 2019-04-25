@@ -21,6 +21,6 @@ public class TestConsumerControllerApi {
     @RequestMapping(value = "/queryConsumer")
     public Object queryConsumer(){
         String producerParams = testConsumerService.queryProducer();
-        return "SpringBoot-Consumer======>消费者服务"+"#########"+producerParams;
+        return "SpringBoot-Consumer======>消费者服务"+"####调用####"+producerParams;
     }
 }
