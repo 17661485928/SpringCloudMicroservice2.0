@@ -1,0 +1,18 @@
+###端口配置
+server:
+  port: 8082
+  ip: 127.0.0.1
+spring:
+  ###应用的服务名称
+  application:
+    name: SpringBoot-Consumer
+eureka:
+  client:
+    service-url:
+      #将其该服务注册到注册中心中去
+      defaultZone: http://127.0.0.1:8100/eureka/
+  instance:
+    #eureka主机名，会在控制页面中显示
+    #hostname: localhost
+    #eureka服务器页面中status的请求路径
+    status-page-url-path: http://${server.ip}:${server.port}/consumer/TestConsumerControllerApi/queryConsumer
