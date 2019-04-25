@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/producer/TestProducerControllerApi")
 public class TestProducerControllerApi {
 
-    @RequestMapping(value = "/queryHelloWorld")
-    public Object queryHelloWorld(){
-        return "Hello World!";
+    @RequestMapping(value = "/queryProducer")
+    public Object queryProducer(){
+        return "SpringBoot-Producer==========>生产者服务";
     }
 }
