@@ -1,8 +1,10 @@
 package com.qht.springbootconsumer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * SpringBoot-Consumer消费者服务
@@ -12,6 +14,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
+@EnableFeignClients
 public class SpringbootConsumerApplication {
 
     public static void main(String[] args) {
