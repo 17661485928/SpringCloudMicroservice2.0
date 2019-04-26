@@ -6,6 +6,15 @@ spring:
   ###应用的服务名称
   application:
     name: SpringBoot-Producer
+  cloud:
+    config:
+      ####读取后缀
+      profile: dev
+      ####读取config-server注册地址
+      discovery:
+        service-id: CONFIG-SERVER
+        enabled: true
+#####    eureka服务注册地址
 eureka:
   client:
     service-url:

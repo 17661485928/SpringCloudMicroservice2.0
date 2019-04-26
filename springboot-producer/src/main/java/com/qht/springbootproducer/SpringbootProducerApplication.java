@@ -2,6 +2,8 @@ package com.qht.springbootproducer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
 /**
  * SpringBoot-Producer服务
  * @author qht
@@ -9,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @return
  */
 @SpringBootApplication
+@EnableEurekaClient
 public class SpringbootProducerApplication {
 
     public static void main(String[] args) {
