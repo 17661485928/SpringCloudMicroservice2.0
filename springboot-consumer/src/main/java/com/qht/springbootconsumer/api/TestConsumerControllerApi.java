@@ -21,6 +21,15 @@ public class TestConsumerControllerApi {
     @RequestMapping(value = "/queryConsumer")
     public Object queryConsumer(){
         String producerParams = testConsumerService.queryProducer();
+        String name = Thread.currentThread().getName();
+        System.err.println(name);
         return "SpringBoot-Consumer======>消费者服务"+"####调用####"+producerParams;
+    }
+
+    @RequestMapping(value = "/queryConsumer1")
+    public Object queryConsumer1(){
+        String name = Thread.currentThread().getName();
+        System.err.println(name);
+        return "queryConsumer1线程池名称====："+name;
     }
 }

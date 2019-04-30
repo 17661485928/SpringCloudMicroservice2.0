@@ -16,3 +16,6 @@ eureka:
     #hostname: localhost
     #eureka服务器页面中status的请求路径
     status-page-url-path: http://${server.ip}:${server.port}/consumer/TestConsumerControllerApi/queryConsumer
+feign:
+  hystrix:
+    enabled: true
