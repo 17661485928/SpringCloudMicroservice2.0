@@ -12,11 +12,11 @@ spring:
 ### 配置网关反向代理
 zuul:
   routes:
-    api-a:
+    api-producer:
       ### 以 /api-producer/访问转发到生产者服务
       path: /api-producer/**
       serviceId: SpringBoot-Producer
-#    api-b:
-      ### 以 /api-order/访问转发到订单服务
-#      path: /api-order/**
-#      serviceId: app-itmayiedu-order
+    api-consumer:
+      ## 以 /api-order/访问转发到消费服务
+      path: /api-consumer/**
+      serviceId: SpringBoot-Consumer
