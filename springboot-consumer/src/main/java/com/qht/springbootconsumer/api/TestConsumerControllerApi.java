@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * 消费者测试类
  * author:qht
@@ -31,5 +33,17 @@ public class TestConsumerControllerApi {
         String name = Thread.currentThread().getName();
         System.err.println(name);
         return "queryConsumer1线程池名称====："+name;
+    }
+
+    /**
+     * 登录接口Api
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/login")
+    public Object login(HttpServletRequest request){
+        String jsonParams = request.getParameter("username");
+        System.err.println(jsonParams);
+        return "login OK!";
     }
 }

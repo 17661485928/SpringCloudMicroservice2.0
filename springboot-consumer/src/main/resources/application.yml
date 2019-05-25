@@ -6,6 +6,10 @@ spring:
   ###应用的服务名称
   application:
     name: SpringBoot-Consumer
+  thymeleaf:
+    #清除缓存
+    cache: false
+    prefix: classpath:/templates/ #默认 classpath:/templates/
 eureka:
   client:
     service-url:
