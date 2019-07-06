@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 public class TestConsumerHystrix implements TestConsumerService {
     @Override
     public String queryProducer() {
-
-        return "hello queryProducer, this messge send failed ";
+        return "登录繁忙，请稍等！";
     }
 }

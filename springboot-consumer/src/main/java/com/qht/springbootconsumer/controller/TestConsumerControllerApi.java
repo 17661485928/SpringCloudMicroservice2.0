@@ -1,4 +1,4 @@
-package com.qht.springbootconsumer.api;
+package com.qht.springbootconsumer.controller;
 
 import com.qht.springbootconsumer.service.TestConsumerService;
 import org.springframework.beans.factory.annotation.Autowired;
