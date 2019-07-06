@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/producer/TestProducerControllerApi")
 public class TestProducerControllerApi {
 
-    @Value("${qht}")
-    private String qht;
     @RequestMapping(value = "/queryProducer")
     public Object queryProducer(){
-        return "SpringBoot-Producer==========>生产者服务"+qht;
+        return "SpringBoot-Producer==========>生产者服务";
     }
 }

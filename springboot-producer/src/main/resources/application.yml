@@ -3,6 +3,18 @@ server:
   port: 8081
   ip: 127.0.0.1
 spring:
+  ###数据库配置--开始
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #加上时区参数serverTimezone=UTC.这是 数据库的时区参数配置
+    url: jdbc:mysql://localhost:3306/user_qht?serverTimezone=GMT%2B8&characterEncoding=utf8&useUnicode=true&useSSL=false
+    username: root #用户名
+    password: root #密码
+    druid:
+      initial-size: 1 #初始连接数(默认值0)
+      min-idle: 1 #最小连接数(默认值0)
+  ####数据库配置结束
+
   ###应用的服务名称
   application:
     name: SpringBoot-Producer
@@ -25,3 +37,14 @@ eureka:
     #hostname: localhost
     #eureka服务器页面中status的请求路径
     status-page-url-path: http://${server.ip}:${server.port}/producer/TestProducerControllerApi/queryProducer
+########################################################################
+### Mybatis 配置
+########################################################
+# mapper文件的路径
+#注意：一定要对应mapper映射xml文件的所在路径
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+#加入此属性会打印sql语句
+logging:
+  level:
+   com.qht.springbootproducer.dao: debug

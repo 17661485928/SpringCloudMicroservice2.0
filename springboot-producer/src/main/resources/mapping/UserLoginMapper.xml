@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qht.springbootproducer.dao.UserLoginDao">
+
+    <!--<resultMap id="BaseResultMap" type="com.xdd.entity.User" >-->
+    <!--<id column="id" property="id" jdbcType="INTEGER" />-->
+    <!--<result column="user_name" property="userName" jdbcType="VARCHAR" />-->
+    <!--<result column="password" property="password" jdbcType="VARCHAR" />-->
+    <!--<result column="age" property="age" jdbcType="INTEGER" />-->
+    <!--</resultMap>-->
+    <sql id="Base_Column_List">
+        ID, USER_NAME, PASS_WORD, CREATE_TIME,UPDATE_TIME
+    </sql>
+
+    <!--查询用户信息-->
+    <select id="findUserInformationList" resultType="com.qht.springbootproducer.response.UserInformationResponse">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM T_USER t1
+        WHERE t1.USER_NAME=#{user_name}
+    </select>
+    <!--增加用户信息-->
+    <insert id="insertUserInformation" parameterType="java.util.Map">
+		INSERT INTO T_USER
+		(
+			USER_NAME,
+			PASS_WORD,
+			CREATE_TIME,
+			UPDATE_TIME
+		)
+		values
+		(
+			#{user_name,jdbcType=VARCHAR},
+			#{pass_word,jdbcType=VARCHAR},
+			#{create_time,jdbcType=TIMESTAMP},
+			#{update_time,jdbcType=TIMESTAMP}
+		)
+
+	</insert>
+
+    <!--修改用户信息-->
+    <update id="updateUserInformation" parameterType="java.util.Map">
+		UPDATE T_USER t1
+			SET
+				t1.USER_NAME=#{user_name,jdbcType=VARCHAR},
+				t1.PASS_WORD=#{pass_word,jdbcType=VARCHAR},
+				t1.UPDATE_TIME=#{update_time,jdbcType=TIMESTAMP}
+			WHERE t1.ID=#{id,jdbcType=DECIMAL}
+
+	</update>
+
+    <!--删除用户信息-->
+    <delete id="deleteUserInformation" parameterType="java.lang.Integer">
+		DELETE FROM T_USER t1 WHERE t1.ID=#{id,jdbcType=INTEGER}
+	</delete>
+</mapper>
